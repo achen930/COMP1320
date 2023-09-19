@@ -3,7 +3,7 @@ function getRemainderFromYear(year) {
     const yrToString = year.toString();
     const lastTwoDigitsOfYr = yrToString.slice(-2);
     // Step 1: how many 12s fit into the last two digits
-    let numOfTwelve = Math.floor(lastTwoDigitsOfYr / 12)
+    let numOfTwelve = Math.floor(lastTwoDigitsOfYr / 12);
     let remainder = lastTwoDigitsOfYr % 12;
     // Step 3: how many 4s fit into the remainder
     let numOf4 = Math.floor(remainder / 4);
@@ -32,7 +32,7 @@ function monthCode(month) {
 
 function nameDayOfWeek(numDayOfWeek) {
     let nameDay = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-    let numDayString = nameDay[numDayOfWeek]
+    let numDayString = nameDay[numDayOfWeek];
     return numDayString;
 }
 
@@ -47,7 +47,7 @@ function isLeapYear(year) {
 
 function getDayOfTheWeek(year, month, day, logEnable = true) {
     let monthCodeNum = Number(monthCode(month));
-    let dayInt = Number(day)
+    let dayInt = Number(day);
     // Checks century
     let firstTwoDigitsOfYr = year.slice(0, 2);
     if (firstTwoDigitsOfYr == 16 || firstTwoDigitsOfYr == 20) {
@@ -67,7 +67,7 @@ function getDayOfTheWeek(year, month, day, logEnable = true) {
     let totalNum = numOfTwelve + remainder + numOf4 + dayInt + monthCodeNum;
     let numDayOfWeek = totalNum % 7;
     let dayOfWeek = nameDayOfWeek(numDayOfWeek);
-    if (logEnable == true){
+    if (logEnable == true) {
         console.log(year, month, day);
         console.log(dayOfWeek);
     }

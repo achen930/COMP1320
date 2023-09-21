@@ -46,8 +46,7 @@ function isLeapYear(year) {
 }
 
 function getDayOfTheWeek(year, month, day, logEnable = true) {
-    let capitalizedMonth = month[0].toUpperCase() + month.substring(1);
-    let monthCodeNum = Number(monthCode(capitalizedMonth));
+    let monthCodeNum = Number(monthCode(month));
     let dayInt = Number(day);
     // Checks century
     let firstTwoDigitsOfYr = year.slice(0, 2);
